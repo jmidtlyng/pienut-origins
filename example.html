@@ -1,0 +1,45 @@
+<head>
+	<meta charset="utf-8">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+	<style>
+		/*Styling for the lines connecting the labels to the slices*/
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+		polyline {
+			fill: none;
+			opacity: .3;
+			stroke: black;
+			stroke-width: 2px;
+		}
+	</style>
+</head>
+
+<body> 
+	<div id="pienut-container"></div>
+	<script src="/module.js"></script>
+</body>
+<script>
+	const pienut = new Pienut('#pienut-container', 960, 960),
+				egData = [{"count":"1","label":"Candidate Took Another Offer"},
+				{"count":"113","label":"Candidate Passed on Opportunity"},
+				{"count":"1","label":"Candidate Submitted by Another Firm"},
+				{"count":"20","label":"Candidat1e Not Qualified"},
+				{"count":"1","label":"CRC - Warehoused"},
+				{"count":"14","label":"Candidate Not Recruitable"},
+				{"count":"2","label":"Client Passed on Resume"},
+				{"count":"14","label":"Candidate - 3rd Attempt to Connect"},
+				{"count":"2","label":"Recommended Internally"},
+				{"count":"13","label":"Key Candidate"},
+				{"count":"2","label":"Candidate Cannot be Found"},
+				{"count":"6","label":"Candidate Applied on Own"},
+				{"count":"3","label":"Candidate Requested Consideration"},
+				{"count":"4","label":"CRC - Passed Internally"},
+				{"count":"3","label":"Submitted"}];
+	
+	pienut.loadData(egData);
+	pienut.draw();
+</script>
